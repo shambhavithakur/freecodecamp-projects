@@ -1,0 +1,217 @@
+/*
+  ========================================
+  Basic reset
+  ========================================
+*/
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5em;
+}
+h3 {
+  margin-bottom: 0.25em;
+}
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+body {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+@media (min-width: 800px) {
+  body {
+    font-size: 18px;
+  }
+}
+.header,
+.footer {
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .header,
+  .footer {
+    text-align: left;
+  }
+}
+.footer {
+  color: #fff;
+}
+
+/* Links */
+
+a {
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.2s ease-in;
+}
+a:focus,
+a:hover {
+  color: #e54f2c;
+}
+.footer-link {
+  color: #fff;
+}
+.project-link:focus .project-link-icon:before,
+.project-link:hover .project-link-icon:before,
+.footer-link:focus,
+.footer-link:hover {
+  color: #e54f2c;
+}
+.project-link-icon:before {
+  display: inline-block;
+  font-size: 2em;
+  font-style: normal;
+  font-variant: normal;
+  color: #fff;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.github-link-icon:before {
+  content: "\f09b";
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
+.web-link-icon:before {
+  content: "\f0ac";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+
+/* Header and footer */
+.header {
+  border-bottom: 1px solid #e5e8e9;
+  padding: 1.525em 2em;
+}
+.footer {
+  padding: 1.75em 2em;
+  background: #160708;
+}
+.footer-text {
+  margin-bottom: 0;
+}
+
+/* Main */
+.projects {
+  background: #e5e8e9;
+  padding: 2em 2em 3em;
+}
+@media (max-width: 410px) {
+  .header,
+  .projects {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+/* Container */
+@media (min-width: 1281px) {
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+
+/* Project collection */
+.project-collection {
+  display: grid;
+  grid-gap: 1.75em;
+}
+.project-collection:not(:first-of-type) {
+  padding-top: 2.125em;
+}
+
+/* Individual projects */
+.project {
+  min-height: 10em;
+  display: grid;
+  grid-template-columns: minmax(min-content, 4fr) minmax(min-content, 0.5fr);
+  border: 0.025px inset rgba(229, 79, 44, 0.25);
+  background: #ffffff;
+  transition: all 0.2s ease-in;
+}
+.project-text {
+  grid-column: 1/2;
+  padding: 1.25em 1.5em;
+}
+.project-description {
+  margin-bottom: 2em;
+}
+.project-links {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #898485;
+}
+.project:focus,
+.project:hover {
+  margin: -0.2em 0.2em 0.2em -0.2em;
+  box-shadow: 0.2em 0.2em 0px 0px #cecfd0;
+}
+.project:hover .project-links {
+  background: #ffa942;
+}
+@media (max-width: 960px) {
+  .project-text {
+    grid-column: 1/3;
+    grid-row: 1;
+  }
+  .project-links {
+    grid-column: 1/3;
+    grid-row: 2;
+  }
+  .project-links {
+    flex-direction: row;
+  }
+  .github-link-icon {
+    margin-right: 0.75em;
+  }
+  .web-link-icon {
+    margin-left: 0.75em;
+  }
+}
+@media (min-width: 880px) {
+  .project-collection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-collection-title {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  .project {
+    grid-column: span 1;
+  }
+}
